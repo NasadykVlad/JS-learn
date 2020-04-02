@@ -199,7 +199,7 @@ var a = typeof('i'); // Визначення типу
 console.log(a);
 
 
-*/
+
 
 
 var Ruslan = 'dsad';
@@ -212,3 +212,60 @@ if (Ruslan == 18) {
 } else {
 	console.log('Я вас не розумію!');
 }
+
+
+
+
+
+var count = 0;
+while (count < 10) {
+	console.log(count);
+	count++;	
+}
+
+
+
+
+
+
+let i = 0;
+do {
+  console.log( i );
+  i++;
+} while (i < 3);
+
+
+
+
+
+
+for (let i = 0; i < 3; i++) { // выведет 0, затем 1, затем 2
+  alert(i);
+}
+
+
+
+
+for (var count = 0; count < 10; count++)
+console.log(count);
+
+
+
+
+*/
+
+let sum = 0;
+
+while (true) {
+
+  let value = +prompt("Введите число", '');
+
+  if (!value) break; // (*)
+
+  sum += value;
+
+}
+alert( 'Сумма: ' + sum );
+
+
+
