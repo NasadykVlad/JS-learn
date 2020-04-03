@@ -239,9 +239,11 @@ do {
 
 
 
+
 for (let i = 0; i < 3; i++) { // выведет 0, затем 1, затем 2
   alert(i);
 }
+
 
 
 
@@ -252,7 +254,7 @@ console.log(count);
 
 
 
-*/
+
 
 let sum = 0;
 
@@ -269,3 +271,27 @@ alert( 'Сумма: ' + sum );
 
 
 
+
+
+
+var author = {     // Задання і вивід об'єкту
+	name: "Vlad",
+	lastname: "Nasadyk"
+}
+console.log(author);
+var d = author.name;
+console.log(d);
+
+
+
+
+
+var a = [1,2,3,4,51,52,31,55]; // Задання масиву
+a.length; // Довжина масиву
+a[1] = 81; // Змінити 1 елемент
+var value = a[1]; // Прочитати елемент 
+console.log(a);
+
+
+
+*/
