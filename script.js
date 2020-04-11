@@ -286,6 +286,7 @@ console.log(d);
 
 
 
+
 var a = [1,2,3,4,51,52,31,55]; // Задання масиву
 a.length; // Довжина масиву
 a[1] = 81; // Змінити 1 елемент
@@ -294,4 +295,99 @@ console.log(a);
 
 
 
+
+
+var a = [1,3,55]; // Задання масиву
+console.log(a.reverse().join("-")); // Використання методів join та reversed
+
+
+
+var a = ["Vlad", "Alina", "Nasadyk", "Boykiv"]; // Метод сортування
+console.log(a.sort());
+var b = [1,3,4,51,52,8,21,111,51,6]; // Сортування чисел
+console.log(b.sort(function(y,u){return y-u}));
+
+
+
+
+var a = [1,2,3];
+console.log(a.concat(4,5)); // Робота методу concat()
+console.log(a.concat(7, 21, [26,[3,1]]));
+
+
+
+
+var a =[1,2,3,4,5,6,7,8]; // Метод splice()
+console.log(a.splice(1,1));
+console.log(a);
+
+
+
+var a = [1,2,3];
+console.log(a.push(4,5)); // Методи push та pop
+console.log(a.pop());
+console.log(a);
+
+
+
+
+
+
+var a = [1,2,3];
+console.log(a.unshift(22,4)); // Методи unsift( ) and shift( )
+console.log(a.shift(22));
+console.log(a);
+
+
+
+
+// Выводит имена и значения всех свойств объектав. Возвращает undefined.
+function printprops(o) {
+for(var p in o)
+console.log(p + ": " + o[p] + "\n");
+}
+
+
+// Вычисляет Декартово расстояние между точками (x1,y1) и (x2,y2).
+function distance(x1, y1, x2, y2) {
+var dx = x2 - x1;
+var dy = y2 - y1;
+return Math.sqrt(dx*dx + dy*dy);
+}
+
+
+
+// Рекурсивная функция вызывающая сама себя ),вычисляющая факториал
+// Напомню,что x! - это произведениеx и всех положительных целых чисел, меньше x.
+function factorial(x) {
+if (x <= 1) return 1;
+return x * factorial(x-1);
+}
+
+
+
+
+
+var scope = "global scope";
+function checkscope() {
+	var scope = "local scope";
+	function f()  {return scope}; // Замикання!
+	return(f);
+}
+checkscope();
+
 */
+
+
+var elements = [
+  'Hydrogen',
+  'Helium',
+  'Lithium',
+  'Beryllium'
+];
+
+// Функцию выше можно записать как стрелочную функцию:
+elements.map((element) => {
+  return element.length;
+}); 
+ 
