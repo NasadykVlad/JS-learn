@@ -46,6 +46,9 @@ if (year == 2020) {
 
 
 
+
+
+
 let year = prompt ("В якому році з'явився КоронаВірус?", ""); // Вказано, декілька умов if/else if/else
 if (year < 2020) {
     alert ('Зарано ще!');
@@ -59,12 +62,85 @@ if (year < 2020) {
 
 
 
+
+
+switch (browser) {
+  case 'Edge':
+    alert( "You've got the Edge!" );
+    break;
+
+  case 'Chrome':
+  case 'Firefox':
+  case 'Safari':
+  case 'Opera':
+    alert( 'Okay we support these browsers too' );
+    break;
+
+  default:
+    alert( 'We hope that this page looks ok!' );
+}
+
+
+
+
+
+var ca = prompt('Go text:', '');
+if (ca == 'Edge') {
+  console.log("You've got the Edge!");
+} else if (ca == 'Chrome', ca == 'Firepox', ca == 'Safari', ca == 'Opera') {
+  console.log('Okay, we support these browsers too');
+} else {
+  console.log('We hope that this page looks ok!');
+}
+
+
+
+
+
+
+
+const number = +prompt('Введите число между 0 и 3', '');
+
+if (number === 0) {
+  alert('Вы ввели число 0');
+}
+
+if (number === 1) {
+  alert('Вы ввели число 1');
+}
+
+if (number === 2 || number === 3) {
+  alert('Вы ввели число 2, а может и 3');
+}
+
+
+
+
+
+const number = +prompt('Введите число между 0 и 3', '');
+switch(number) {
+  case 0:
+    console.log('Вы ввели число 0');
+  break;
+
+  case 1:
+    console.log('Вы ввели число 1');
+  break;
+
+  case 2:
+  case 3:
+    console.log('Вы ввели число 2, а может и 3');
+    break;
+}
+
 let login = prompt("Кто вы?", ""); // Правильне використання контрукцій "?"
 let message = (login == "Сотрудник") ? 'Привет':
     (login == "Директор") ? 'Здравствуйте': 
     (login == "") ? 'Нет логина' :
     '';
 alert(message);
+
+
 
 
 
@@ -78,6 +154,7 @@ book.topic; // Отримання даних із об'єкту
 book["fat"] // Другий спосіб отримання значення властивості
 book.author = "Flanagan"; // Створити нову властивість привоєнням
 book.contents = {}; // { } - Пустий об'єкт без власивості
+
 
 
 
@@ -376,7 +453,7 @@ function checkscope() {
 }
 checkscope();
 
-*/
+
 
 
 var elements = [
@@ -391,3 +468,9 @@ elements.map((element) => {
   return element.length;
 }); 
  
+*/
+
+
+
+
+
