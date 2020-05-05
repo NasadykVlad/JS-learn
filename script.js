@@ -3,6 +3,8 @@
 
 /*
 
+
+
 alert ('Hello, world!'); // Вивід повідомлення
 
 
@@ -468,9 +470,108 @@ elements.map((element) => {
   return element.length;
 }); 
  
+
+
+
+function Vlad_Operator () {
+  console.log('Privet');
+}
+Vlad_Operator();
+
+function pow (x,n) {
+  var v = prompt('Введите x:', '');
+  var vv = prompt('Введите n:', '');
+  console.log(v**vv);
+}
+pow();
+
+
+
+
+
+for(var i = 0; i < 10; i++) {
+  if(i %3 == 0 && i != 0) continue; 
+  if(i == 3) break;
+  console.log(i)
+};
+
+
+
+var x = 0;
+while (x < 10) {
+  console.log(x);
+  x++;
+};
+
+
+
+var y = 1000;
+do {
+    console.log("Vlad");
+} while (y < 100);
+
+
+
+var array = new Array("Vlad", 13, 23, 1.41);
+console.log(array[2]);
+
+
+
+let Denis = {
+  year: 17,
+  rozum: false,
+  friend: "Vlad"
+};
+
+Denis.divchyna = false;
+delete Denis.rozum;
+Denis["Tanya Scherba"] = true;
+console.log(Denis["Tanya Scherba"]);
+delete Denis["Tanya Scherba"];
+console.log(Denis);
+console.log(Denis.year);
+
+
 */
 
 
 
 
 
+// ************     OOP         ***************
+
+class Person {
+  constructor(firstName, lastName) {
+    this.firstName = firstName
+    this.lastName = lastName
+  }
+  getFullName() {
+    return this.firstName + ' ' + this.lastName
+  }
+}
+
+let person = new Person('Denys', 'Romanchuk');
+console.log(person.getFullName()); 
+console.log(person.firstName);
+console.log(person.lastName);
+
+class User extends Person {
+  constructor(firstName, lastName, email, password) {
+    super(firstName, lastName)
+    this.email = email
+    this.password = password
+   }
+   getEmail() {
+     return this.email
+   }
+   getPassword() {
+     return this.password
+   }
+}
+
+
+let user = new User('Tanysha', 'Scherba', 'tanyascherba@gmail.com', 'denis2020');
+console.log(user.firstName);
+console.log(user.lastName);
+console.log(user.email);
+console.log(user.password);
