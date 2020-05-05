@@ -532,7 +532,6 @@ console.log(Denis);
 console.log(Denis.year);
 
 
-*/
 
 
 
@@ -540,6 +539,12 @@ console.log(Denis.year);
 
 // ************     OOP         ***************
 
+
+
+
+
+
+// 1) 
 class Person {
   constructor(firstName, lastName) {
     this.firstName = firstName
@@ -550,6 +555,11 @@ class Person {
   }
 }
 
+
+
+
+
+// 2)
 let person = new Person('Denys', 'Romanchuk');
 console.log(person.getFullName()); 
 console.log(person.firstName);
@@ -570,8 +580,116 @@ class User extends Person {
 }
 
 
+
+
+// 3)
 let user = new User('Tanysha', 'Scherba', 'tanyascherba@gmail.com', 'denis2020');
 console.log(user.firstName);
 console.log(user.lastName);
 console.log(user.email);
 console.log(user.password);
+
+
+
+
+
+// 4)
+var MYAPP = MYAPP || {}; // Створення глоабального простору імен
+
+
+
+
+// 5)
+var p = {x: 1;}; // Оприділити об'єкт прототип
+var o = Object.create(p); // Створити об'єкт із цим прототипом
+p.isPrototypeOf(o); // TRUE => o наслідує p
+Object.prototype.isPrototypeOf(p); // TRUE => p наслідує Object.prototype
+
+
+
+
+
+// 6)
+var user = {
+  name: "Sofia",
+  lastname: "Tkachuk"
+};
+
+var clone = {};
+
+for (var key in user){ // Копіювання об'єктів
+clone[key] = user[key];
+};
+console.log(clone.name)
+
+
+
+
+Объекты – это ассоциативные массивы с рядом дополнительных возможностей.
+
+Они хранят свойства (пары ключ-значение), где:
+
+Ключи свойств должны быть строками или символами (обычно строками).
+Значения могут быть любого типа.
+Чтобы получить доступ к свойству, мы можем использовать:
+
+Запись через точку: obj.property.
+Квадратные скобки obj["property"]. Квадратные скобки позволяют взять ключ из переменной, например, obj[varWithKey].
+Дополнительные операторы:
+
+Удаление свойства: delete obj.prop.
+Проверка существования свойства: "key" in obj.
+Перебор свойств объекта: цикл for for (let key in obj).
+Объекты присваиваются и копируются по ссылке. Другими словами, переменная хранит не «значение объекта», а «ссылку» (адрес в памяти) на это значение. Поэтому копирование такой переменной или передача её в качестве аргумента функции приводит к копированию этой ссылки, а не самого объекта. Все операции с использованием скопированных ссылок (например, добавление или удаление свойств) выполняются с одним и тем же объектом.
+
+Чтобы сделать «настоящую копию» (клон), мы можем использовать Object.assign или _.cloneDeep(obj).
+
+То, что мы изучали в этой главе, называется «простым объектом» («plain object») или просто Object.
+
+В JavaScript есть много других типов объектов:
+
+Array для хранения упорядоченных коллекций данных,
+Date для хранения информации о дате и времени,
+Error для хранения информации об ошибке.
+… и так далее.
+У них есть свои особенности, которые мы изучим позже. Иногда люди говорят что-то вроде «тип данных Array» или «тип данных Date», но формально они не являются отдельными типами, а относятся к типу данных Object. Они лишь расширяют его различными способами.
+
+Объекты в JavaScript очень мощные. Здесь мы только немного углубились в действительно огромную тему. Мы будем плотно работать с объектами и узнаем о них больше в следующих частях учебника.
+
+
+
+
+
+// 7)
+let menu = {
+  width: 200,
+  height: 300,
+  title: "My menu"
+};
+console.log(menu.width * 2);
+console.log(menu.height * 2);
+
+*/
+
+// 8)
+var Person = function () { // Об'явлення нового конструктору класу.
+  console.log('instance created'); // Виводить в консоль повідомлення в момент створення новго екземпляру
+};
+var person1 = new Person(); // Створення нового еземпляру
+
+
+
+
+
+// 9)
+var Person = function (firstName, lastName) { // Об'являємо новий конструктор класу
+  this.firstName = firstName; // Вказуємо, що перше ім'я буде дорівнювати 1 значенюю
+  this.lastName = lastName;
+  console.log('instance created'); 
+};
+
+var person1 = new Person("Tanyshka", " Scherba."); // Створюємо обє'кти по класу Person
+var person2 = new Person("Sofka", " Tkachuk.");
+
+console.log("1 person is " + person1.firstName + person1.lastName); 
+console.log("2 person is " + person2.firstName + person2.lastName);
