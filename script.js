@@ -3,8 +3,6 @@
 
 /*
 
-
-
 alert ('Hello, world!'); // Вивід повідомлення
 
 
@@ -669,14 +667,13 @@ let menu = {
 console.log(menu.width * 2);
 console.log(menu.height * 2);
 
-*/
+
 
 // 8)
 var Person = function () { // Об'явлення нового конструктору класу.
   console.log('instance created'); // Виводить в консоль повідомлення в момент створення новго екземпляру
 };
 var person1 = new Person(); // Створення нового еземпляру
-
 
 
 
@@ -693,3 +690,117 @@ var person2 = new Person("Sofka", " Tkachuk.");
 
 console.log("1 person is " + person1.firstName + person1.lastName); 
 console.log("2 person is " + person2.firstName + person2.lastName);
+
+
+
+
+
+// 10)
+
+var Person = function (firstName, lastName) { // Об'являємо новий конструктор класу
+  this.firstName = firstName; // Вказуємо, що перше ім'я буде дорівнювати 1 значенюю
+  this.lastName = lastName; // Вказуємо, що друге ім'я буде дорівнювати 2 значенюю
+  console.log('instance created'); // Вивід
+};
+
+Person.prototype.sayHello = function () { // Об'являємо метод, присвоюючи функцію в властивість prototype класу
+  console.log("I say hello " + this.firstName + this.lastName); // Вивід
+};
+
+var person1 = new Person("Olya ", "Dyak"); // Добавляємо нового користувача
+
+person1.sayHello(); // Викликаємо метод sayHello() класу Person
+
+
+
+
+
+
+// 11)
+
+
+
+function Information (args) { // Функція приймає єдиний аргумент args, який може вміщувати тільки одне із властивостей або ніодного
+  var output = ""; // Пуста змінна
+
+  if (typeof args.name == "string") { // Функція перевіряється за допомогою оператора typeof
+    output += "Name: " + args.name + "\n"; // Тіло функції 
+  }
+
+  if (typeof args.age == "number") {
+    output += "Age: " + args.age + "\n";
+  }
+
+  console.log(output); // Вивід
+ }
+
+ Information ({ // Задання об'єкту
+  name: "Sofia",
+  age: 17
+ });
+
+
+
+
+
+
+ var arr = ["red", "black", "white"]; // Задання масиву
+ console.log(arr.join("|")); // Вивід масиву з методом join (розділювач)
+
+
+
+
+
+
+// 12)
+
+
+ var Person = function (firstName) { // Створюємо конструктор Person
+  this.firstName = firstName;
+ };
+
+ Person.prototype.walk = function () { // Добавляємо 1 метод
+  console.log("I am walking!");
+ };
+
+ Person.prototype.say = function () { // Добавляємо 2 метод
+  console.log("Hello, I am " + firstName);
+ };
+
+ function Student (firstName, subject) { // Створюємо конструктор Student
+  Person.call(this, firstName); // Викликаємо конструктор батьківського класу
+  this.subject = subject;
+ };
+
+// Создаём объект Student.prototype, который наследуется от Person.prototype.
+// Примечание: Рспространённая ошибка здесь, это использование "new Person()", чтобы создать
+// Student.prototype. Это неверно по нескольким причинам, не в последнюю очередь
+// потому, что нам нечего передать в Person в качестве аргумента "firstName"
+// Правильное место для вызова Person показано выше, где мы вызываем 
+// его в конструкторе Student.
+
+Student.prototype = Object.create(Person.prototype);
+Student.prototype.constructor = Student; // Встановлюється властивість"constructor" для посилання на клас Student
+
+Student.prototype.sayHello = function () {
+  console.log("Hello, I am " + this.firstName + ". I am studying " + this.subject + " .");
+};
+
+var student1 = new Student ("Vladyslav", "IPZS");
+var student2 = new Student ("Sofia", "Fizyka");
+
+student2.sayHello(); // Вивід
+
+*/
+
+ 
+
+// 14) Приклади абстракції
+
+var animal = function () {};
+
+console.log("animal is function: " + (animal instanceof Function));
+console.log("animal.prototype is an Object:  " + (animal.prototype instanceof Object));
+
+
+
