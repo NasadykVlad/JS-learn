@@ -73,6 +73,23 @@ $("button").click(function () {
 });
 });
 
+
+
+
+
+
+
+
+
+
+$(document).ready(function () {
+$("button").click(function () { // AJAX
+	$("p").load("text.txt"); 
+});
+});
+
+
+
 */
 
 
@@ -80,15 +97,8 @@ $("button").click(function () {
 
 $(document).ready(function () {
 $("button").click(function () {
-	$("html").css("background-color", "yellow");
+	$("html").css("background-color", "yellow"); // Маніпуляція css in DOM
 });
 });
-
-
-
-
-
-
-
 
 
